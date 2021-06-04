@@ -3,8 +3,7 @@
         v-container
             v-row(justify='space-between' aling='center')
                 .logo Logo
-                v-spacer
-                .menuIcon.float-right.curser_pointer_active
+                .menuIcon.float-right
                     include ../static/svg/menu.pug
 </template>
 
