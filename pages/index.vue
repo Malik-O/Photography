@@ -3,7 +3,9 @@
         appBar
         .Slide header
         gallery(type='art' imgsCount=9 cols=3)
-        gallery(type='product' imgsCount=9 cols=3)
+        .Slide footer
+        //- gallery(type='architectural' imgsCount=9 cols=3)
+        //- gallery(type='product' imgsCount=9 cols=3)
 </template>
 
 <script>
@@ -15,9 +17,6 @@ export default {
         cols: 3,
     }),
     components: { appBar, gallery },
-    methods: {
-        genPecURL: (n) => `imgs/product/${n}.jpg`,
-    },
 };
 </script>
 <style lang="sass">

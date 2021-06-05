@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "core-js": "^3.9.1",
-    "nuxt": "^2.15.3"
+    "gsap": "^3.6.1",
+    "imports-loader": "^3.0.0",
+    "nuxt": "^2.15.3",
+    "scrollmagic": "^2.0.8",
+    "vue-scrollmagic": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.3",
