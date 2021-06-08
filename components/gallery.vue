@@ -32,7 +32,7 @@ export default {
         color: #fff
         mix-blend-mode: difference
         opacity: .8
-        z-index: 1
+        z-index: 0
         position: absolute
     > .col
         position: relative

@@ -12,3 +12,12 @@ $(".gallery").each(function () {
     wizard.setTween(tl);
     wizard.setPin(this);
 });
+// tags
+$(".Slide").each(function () {
+    $(".tags").append(
+        $('<div class="tag"/>').css(
+            "top",
+            `${(this.offsetTop / $("body").innerHeight()) * 100}vh`
+        )
+    );
+});

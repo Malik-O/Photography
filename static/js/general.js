@@ -2,5 +2,11 @@
 $("html").niceScroll({
     cursorcolor: "#FEC17F",
     cursorborder: "none",
-    scrollspeed: 300,
+    cursorborderradius: "1px",
+    scrollspeed: 250,
+    cursoropacitymin: 0.5,
+    cursoropacitymax: 0.8,
 });
+//
+import { tl } from "./inverse.js";
+tl.play();

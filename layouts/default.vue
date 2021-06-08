@@ -1,5 +1,10 @@
 <template lang="pug">
     v-app(dark)
+        //- invers
+        #invers1
+        include ../static/svg/bobble.pug
+        //- noise
+        #noise
         Nuxt
 </template>
 
@@ -8,8 +13,5 @@ export default {};
 </script>
 
 <style lang="sass">
-*
-    color: $secondary
-    font-family: $secondary_font_family
-    user-select: none
+@import "@/assets/style/layout"
 </style>
