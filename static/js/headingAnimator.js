@@ -1,6 +1,6 @@
 $(".splitter span.char").on("mouseover", function () {
     gsap.to(this, {
-        scale: 0.7,
+        scale: 0.8,
         duration: 0.3,
     });
     gsap.to(this, {

@@ -31,7 +31,6 @@ export default {
     .heading
         color: #fff
         mix-blend-mode: difference
-        font-family: $primary_font_family !important
         opacity: .8
         z-index: 1
         position: absolute
@@ -42,8 +41,6 @@ export default {
             width: 100%
             padding: 10%
             margin: 0
-.splitter
-    cursor: default
 .pin-spacer
     position: relative
     &.curr-before > *

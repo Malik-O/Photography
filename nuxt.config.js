@@ -41,6 +41,13 @@ export default {
                 // defer: true,
                 body: true,
             },
+            {
+                src: "https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js",
+                // async: "async",
+                ssr: false,
+                // defer: true,
+                body: true,
+            },
             // {
             //     src: "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js",
             //     // async: "async",

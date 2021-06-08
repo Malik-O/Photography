@@ -7,14 +7,15 @@ const timelineGenerator = (g) => {
         left: `calc(50vw - ${heading.width() / 2}px)`,
     });
     col.each(function (i) {
-        let height = -$(this).innerHeight();
+        let height = -$(this).innerHeight(),
+            odd = !!(i % 2);
         tl.fromTo(
             this,
             {
-                top: !!(i % 2) ? 100 + "%" : height,
+                top: odd ? "100%" : height,
             },
             {
-                top: !!(i % 2) ? height : 100 + "%",
+                top: odd ? height : "100%",
                 duration: 1,
             },
             `-=${Number(!!i)}`

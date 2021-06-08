@@ -5,6 +5,7 @@
         gallery(type='art' heading='art photography' imgsCount=9 cols=3)
         gallery(type='architectural' imgsCount=9 cols=3)
         gallery(type='product' imgsCount=9 cols=3)
+        script(src='./js/general.js' type='module')
 </template>
 
 <script>
@@ -22,8 +23,4 @@ export default {
 .Slide
     height: 100vh
     overflow: hidden
-    &:nth-of-type(1):not(.gallery)
-        background: red
-    &:nth-of-type(3)
-        background: blue
 </style>
