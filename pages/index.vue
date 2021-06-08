@@ -3,9 +3,8 @@
         appBar
         .Slide header
         gallery(type='art' imgsCount=9 cols=3)
-        .Slide footer
-        //- gallery(type='architectural' imgsCount=9 cols=3)
-        //- gallery(type='product' imgsCount=9 cols=3)
+        gallery(type='architectural' imgsCount=9 cols=3)
+        gallery(type='product' imgsCount=9 cols=3)
 </template>
 
 <script>
@@ -23,4 +22,8 @@ export default {
 .Slide
     height: 100vh
     overflow: hidden
+    &:nth-of-type(1):not(.gallery)
+        background: red
+    &:nth-of-type(3)
+        background: blue
 </style>
