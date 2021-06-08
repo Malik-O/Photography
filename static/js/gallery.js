@@ -1,25 +1,9 @@
-const genTL = (g) => {
-    const tl = gsap.timeline({ paused: true });
-    g.children(`.col`).each(function (i) {
-        let col = $(this);
-        tl.fromTo(
-            col,
-            {
-                y: col.height() * (-1) ** !!(i % 2),
-            },
-            {
-                y: col.height() * (-1) ** !(i % 2),
-                duration: 1,
-            },
-            `-=${Number(!!i)}`
-        );
-    });
-    return tl;
-};
+// Dependencies
+import { timelineGenerator } from "./timelineGenerator.js";
 import { Wizard } from "./wizard.js";
-$(".gallery").each(function (index) {
-    console.log(index);
-    const tl = genTL($(this));
+//
+$(".gallery").each(function () {
+    const tl = timelineGenerator($(this));
     const wizard = new Wizard({
         triggerElement: this,
         triggerHook: 0,

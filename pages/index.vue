@@ -1,8 +1,8 @@
 <template lang="pug">
     v-container(fluid).pa-0
         appBar
-        .Slide header
-        gallery(type='art' imgsCount=9 cols=3)
+        .Slide hello
+        gallery(type='art' heading='art photography' imgsCount=9 cols=3)
         gallery(type='architectural' imgsCount=9 cols=3)
         gallery(type='product' imgsCount=9 cols=3)
 </template>
