@@ -3,21 +3,22 @@
     color: $secondary
     font-family: $secondary_font_family
     user-select: none
-    z-index: 100
+    // z-index: 100
 // 
-svg clipPath#bobble path
-    transform-origin: 50px 50px
-    transform: scale(0)
-#invers1
+[id^='bobble'] path
+    // transform-origin: 50px 50px
+    // transform: translate(100.5vw, 6vh) scale(0.3)
+.inverse
     width: 100vw
     height: 100vh
     mix-blend-mode: difference
+    background: #fff
+    clip-path: url(#bobble-1)
+    transform-origin: 0 0
     z-index: 2
     position: fixed !important
-    background: #fff
-    clip-path: url(#bobble)
-    transform-origin: 0 0
-    position: absolute
+    top: 0
+    left: 0
 
 // key frames
 @keyframes ani

@@ -26,7 +26,7 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-.row
+.Slide
     position: relative
     .heading
         color: #fff
@@ -35,6 +35,7 @@ export default {
         z-index: 0
         position: absolute
     > .col
+        z-index: 3
         position: relative
         padding: 0
         .row

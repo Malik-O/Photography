@@ -14,6 +14,7 @@ const timelineGenerator = (g) => {
         opacity: 0,
         rotate: -20,
         stagger: 0.1,
+        ease: "elastic.out(1, 0.3)",
         duration: 1,
     });
     // animate the photos columns
