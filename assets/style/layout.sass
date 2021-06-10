@@ -5,6 +5,7 @@
     color: $secondary
     font-family: $secondary_font_family
     user-select: none
+    cursor: none
     // z-index: 100
 // 
 [id^='bobble'] path
@@ -70,10 +71,11 @@ $crossWidth: 3px
 #outerCurser
     width: $D
     height: $D
-    // border: 3px solid $color
-    background: $color
+    border: 3px solid $color
+    // background: $color
     border-radius: 50%
     box-sizing: border-box
+    pointer-events: none
     opacity: 1
     mix-blend-mode: difference
     z-index: 15
@@ -97,6 +99,7 @@ $crossWidth: 3px
     background: $color
     border-radius: 50%
     mix-blend-mode: difference
+    pointer-events: none
     z-index: 15
     position: fixed
     &.cross

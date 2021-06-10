@@ -1,7 +1,9 @@
 // activate the menu
 $(".menuIcon").on("click", () => {
     $(".menu").addClass("active");
-    gsap.to(".menu .blur", {
+    const tl = gsap.timeline();
+    tl.set(".menu", { display: "block" });
+    tl.to(".menu .blur", {
         opacity: 1,
     });
     // $(window).off("scroll");
@@ -15,11 +17,12 @@ $(".menuIcon").on("click", () => {
 // });
 $(window).on("click", (e) => {
     if ($(e.target).hasClass("blur")) {
-        console.log("deactivate");
+        const tl = gsap.timeline();
         $(".menu").removeClass("active");
-        gsap.to(".menu .blur", {
+        tl.to(".menu .blur", {
             opacity: 0,
         });
+        tl.set(".menu", { display: "none" });
         $("html").css({ overflow: "visible" });
         $("html").niceScroll({
             cursorcolor: "#FEC17F",

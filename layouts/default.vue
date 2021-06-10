@@ -5,8 +5,13 @@
         include ../static/svg/bobble.pug
         //- noise
         #noise
+        //- curser
+        #curser
+        #outerCurser
+        //- doc
         Nuxt
         script(src='./js/general.js' type='module')
+        script(src='./js/curser.js' type='module')
 </template>
 
 <script>

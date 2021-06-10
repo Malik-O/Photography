@@ -49,6 +49,15 @@ const inverse = () => {
             },
             i
         );
+        // menu
+        tl.to(
+            ".nicescroll-cursors",
+            {
+                background: colors[i],
+                duration: 0.2,
+            },
+            i
+        );
     }
     return tl;
 };
