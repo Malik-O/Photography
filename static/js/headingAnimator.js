@@ -1,5 +1,5 @@
 var activeElements = [];
-$(".splitter span.char").on("mouseover", function (e) {
+$(".Slide .splitter span.char").on("mouseover", function (e) {
     let effected =
         e.ctrlKey | e.shiftKey | e.altKey ? $(this).parent()[0] : this;
     if (activeElements.indexOf(effected) == -1) {

@@ -26,31 +26,5 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-.Slide
-    position: relative
-    .heading
-        color: #fff
-        mix-blend-mode: difference
-        opacity: .8
-        z-index: 1
-        position: absolute
-    > .col
-        // z-index: 3
-        position: relative
-        padding: 0
-        .row
-            width: 100%
-            padding: 10%
-            margin: 0
-.pin-spacer
-    position: relative
-    &.curr-before > *
-        position: absolute
-        top: 0
-    &.curr-after > *
-        position: absolute
-        bottom: 0
-    &.triggered
-        > *
-            position: fixed
+@import "@/assets/style/gallery"
 </style>

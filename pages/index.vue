@@ -20,20 +20,4 @@ export default {
     components: { appBar, gallery },
 };
 </script>
-<style lang="sass">
-#ascrail2000
-    padding-right: 5px
-    z-index: 100 !important
-.Slide
-    height: 100vh
-    overflow: hidden
-.tags
-    .tag
-        width: 20px
-        height: 2px
-        border-radius: 5px
-        background: red
-        position: fixed
-        top: 0
-        right: 5px
-</style>
+<style lang="sass"></style>

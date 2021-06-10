@@ -1,0 +1,32 @@
+.Slide
+    position: relative
+    .heading.splitter
+        text-align: center
+        cursor: default
+        letter-spacing: .8rem !important
+        color: #fff
+        mix-blend-mode: difference
+        opacity: .8
+        z-index: 1
+        position: absolute
+        *
+            font-family: $primary_font_family
+    > .col
+        // z-index: 3
+        position: relative
+        padding: 0
+        .row
+            width: 100%
+            padding: 10%
+            margin: 0
+.pin-spacer
+    position: relative
+    &.curr-before > *
+        position: absolute
+        top: 0
+    &.curr-after > *
+        position: absolute
+        bottom: 0
+    &.triggered
+        > *
+            position: fixed

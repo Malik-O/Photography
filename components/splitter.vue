@@ -16,12 +16,6 @@ export default {
 </script>
 
 <style scoped lang="sass">
-.splitter
-    text-align: center
-    cursor: default
-    letter-spacing: .8rem !important
-    *
-        font-family: $primary_font_family
 .word, .char
     display: inline-block
 </style>

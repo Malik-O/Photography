@@ -8,24 +8,20 @@
         //- 
         .menu
             .blur
+            ul
+                li(v-for='title in titles')
+                    splitter.heading.text-h3(:text='title' :capitalize='true')
+
         script(src='./js/appBar.js' type='module')
 </template>
 
 <script>
-export default {};
+import splitter from "@/components/splitter";
+export default {
+    data: () => ({ titles: ["home", "art", "architectural", "product"] }),
+    components: { splitter },
+};
 </script>
 <style lang="sass" scoped>
-.menuIcon
-    cursor: pointer
-.menu
-    width: 100vw
-    height: 100vh
-    position: fixed
-    top: 0
-    left: 0
-    .blur
-        width: 100%
-        height: 100%
-        backdrop-filter: blur(10px)
-        z-index: 20
+@import "@/assets/style/appBar"
 </style>
