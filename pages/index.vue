@@ -3,11 +3,10 @@
         v-container(fluid).pa-0
             appBar
             .Slide hello
-            gallery(type='art' heading='art photography' imgsCount=9 cols=3)
+            gallery(type='art' heading='art photography' color='#325f91' imgsCount=9 cols=3)
             gallery(type='architectural' imgsCount=9 cols=3)
             gallery(type='product' imgsCount=9 cols=3)
             .tags
-            script(src='./js/general.js' type='module')
 </template>
 
 <script>

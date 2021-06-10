@@ -1,6 +1,6 @@
 class Wizard {
     constructor({ triggerElement, triggerHook, duration }) {
-        this.triggerElement = triggerElement;
+        this.triggerElement = $(triggerElement);
         this.triggerHook = triggerHook == undefined ? 0.5 : triggerHook;
         this.duration = duration ? ++duration : 2;
         //
@@ -8,23 +8,31 @@ class Wizard {
         $(window).on("scroll", (e) => {
             // let direction = lastScrollTop > scrollY; // up: 1, down: 0
             // triggered status
-            if (this.pinEle) {
-                var Bounding = this.pinEle[0].getBoundingClientRect(),
-                    start = Bounding.y / window.innerHeight - this.triggerHook,
-                    end =
-                        (Bounding.y + Bounding.height) / window.innerHeight -
-                        this.triggerHook -
-                        1;
-                this.triggered = (start < 0) ^ (end < 0);
-                // set the non trigger position with the classes
-                this.pinEle.removeClass("curr-before curr-after");
-                if (!start < 0 && !end < 0) this.pinEle.addClass("curr-before");
-                else if (start < 0 && end < 0)
-                    this.pinEle.addClass("curr-after");
-                // manage triggered class
-                if (this.triggered) this.pinEle.addClass("triggered");
-                else this.pinEle.removeClass("triggered");
+            const boundingElement = $(
+                this.pinEle ? this.pinEle : this.triggerElement
+            )[0];
+            const Bounding = boundingElement.getBoundingClientRect(),
+                start = Bounding.y / window.innerHeight - this.triggerHook,
+                end =
+                    (Bounding.y + Bounding.height) / window.innerHeight -
+                    this.triggerHook -
+                    1;
+            // if (this.pinEle) {
+            const upEle = this.pinEle || this.triggerElement;
+            this.triggered = (start < 0) ^ (end < 0);
+            // set the non trigger position with the classes
+            upEle.removeClass("curr-before curr-after");
+            if (!(start < 0 || end < 0)) {
+                upEle.addClass("curr-before");
+                this.tl.totalProgress(0);
+            } else if (start < 0 && end < 0) {
+                upEle.addClass("curr-after");
+                this.tl.totalProgress(1);
             }
+            // manage triggered class
+            if (this.triggered) upEle.addClass("triggered");
+            else upEle.removeClass("triggered");
+            // }
             // activate the time line progress
             if (this.triggered) {
                 this.tl.totalProgress(
@@ -62,9 +70,7 @@ class Wizard {
         this.pinEle.css({
             height:
                 window.innerHeight * (this.duration - (this.triggerHook + 1)),
-            // "padding-bottom": this.pinEle.height(),
         });
-        console.log(window.innerHeight, this.duration, this.triggerHook);
     }
 }
 //

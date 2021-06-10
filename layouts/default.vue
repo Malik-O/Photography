@@ -6,6 +6,7 @@
         //- noise
         #noise
         Nuxt
+        script(src='./js/general.js' type='module')
 </template>
 
 <script>
