@@ -3,22 +3,23 @@
         v-container
             v-row(justify='space-between' aling='center')
                 .logo Logo
-                .menuIcon.float-right
+                .menuIcon.curser-pointer.float-right
                     include ../static/svg/menu.pug
         //- 
         .menu
             .blur
             ul
                 li(v-for='title in titles')
-                    splitter.heading.text-h3(:text='title' :capitalize='true')
-
+                    splitter.heading.text-h3(:text='title' :capitalize='true' style='color: white')
         script(src='./js/appBar.js' type='module')
 </template>
 
 <script>
 import splitter from "@/components/splitter";
 export default {
-    data: () => ({ titles: ["home", "art", "architectural", "product"] }),
+    data: () => ({
+        titles: ["home", "art", "architectural", "product", "contact us"],
+    }),
     components: { splitter },
 };
 </script>

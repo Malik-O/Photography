@@ -42,6 +42,13 @@ export default {
                 body: true,
             },
             {
+                src: "https://assets.codepen.io/16327/MorphSVGPlugin3.min.js",
+                // async: "async",
+                ssr: false,
+                // defer: true,
+                body: true,
+            },
+            {
                 src: "https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js",
                 // async: "async",
                 ssr: false,

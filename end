@@ -1,0 +1,65 @@
+[33mcommit cc423cb0ae8cba9e24c6577a29dcae30e460379f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Thu Jun 10 14:51:07 2021 +0200
+
+    add the custom curser
+
+[33mcommit c9a4aa9270a7735d71aefc12d7d44fb7f2995b0c[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Thu Jun 10 13:59:29 2021 +0200
+
+    diable scroll when activating the menu and aisolate the style files
+
+[33mcommit dcccf8f4fd14c13e2834603e84bdc2fba48bb123[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Thu Jun 10 12:00:55 2021 +0200
+
+    add bobble color and menu blur
+
+[33mcommit c6c4a73787582d1ca3ba5e59e1334a4ffbe732ea[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Wed Jun 9 13:54:43 2021 +0200
+
+    position the bobble inverse
+
+[33mcommit 940d0d622f6fec4f82caf710ce5e72a253cacb4f[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Tue Jun 8 18:43:52 2021 +0200
+
+    add inverse and noises
+
+[33mcommit 46d564906da052dce19d83ee35556855ebba386e[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Tue Jun 8 14:35:24 2021 +0200
+
+    add nice scroll
+
+[33mcommit d8a6ff7289e80d992197c6fed027d56e379bb4f8[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Tue Jun 8 13:38:27 2021 +0200
+
+    add the splitter animator (headingAnimator) and timeline generator
+
+[33mcommit 6eb33c4cd4c6e38ea2312b5ea23c2a14f1e7db98[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Tue Jun 8 10:10:26 2021 +0200
+
+    creat wizard class (my awn scroll magic) and asolate it
+
+[33mcommit 02df4a357689cc94cd20474fac6cfcfa24a19f6b[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Sat Jun 5 09:25:48 2021 +0200
+
+    faild with scroll magic and begain to create my own
+
+[33mcommit d0380f08d31405d40ef1accaec9ef0925ac78733[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Fri Jun 4 08:38:20 2021 +0200
+
+    adding a gallary component
+
+[33mcommit 838750f4eeaf794b34496858280f59f6931d9bd4[m
+Author: unknown <malik.osama1234@hotmail.com>
+Date:   Fri Jun 4 06:18:39 2021 +0200
+
+    set the scene to the menu (nice first setup)

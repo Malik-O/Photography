@@ -20,7 +20,7 @@ const inverse = () => {
                 attr: {
                     d: "M47.9,-63.9C57.1,-59.2,56.2,-38.6,54.5,-22.7C52.9,-6.8,50.5,4.4,48,16.7C45.5,28.9,42.9,42.1,34.9,47.4C26.8,52.7,13.4,50,1.6,47.8C-10.2,45.6,-20.4,43.9,-26.7,38C-32.9,32.2,-35.2,22.2,-45.8,10.1C-56.3,-2,-75,-16.3,-76.2,-28.5C-77.3,-40.7,-60.9,-50.9,-45.2,-53.5C-29.6,-56.1,-14.8,-51,2.3,-54.1C19.3,-57.3,38.7,-68.5,47.9,-63.9Z",
                 },
-                "transform-origin": "50px 50px",
+                // "transform-origin": "50px 50px",
                 x: 0,
                 y: 0,
                 scale: 25,
@@ -49,7 +49,7 @@ const inverse = () => {
             },
             i
         );
-        // menu
+        // nicescroll
         tl.to(
             ".nicescroll-cursors",
             {
@@ -59,6 +59,9 @@ const inverse = () => {
             i
         );
     }
+    //
+    // gsap.to("#bobbles path", { morphSVG: "#rect" });
+    // findShapeIndex("#bobbles path", "#rect");
     return tl;
 };
 export { inverse };

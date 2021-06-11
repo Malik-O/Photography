@@ -18,4 +18,6 @@ export default {
 <style scoped lang="sass">
 .word, .char
     display: inline-block
+span
+    font-family: $primary_font_family
 </style>

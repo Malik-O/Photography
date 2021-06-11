@@ -6,12 +6,11 @@
         //- noise
         #noise
         //- curser
-        #curser
         #outerCurser
+        #curser
         //- doc
         Nuxt
         script(src='./js/general.js' type='module')
-        script(src='./js/curser.js' type='module')
 </template>
 
 <script>

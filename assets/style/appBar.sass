@@ -1,5 +1,3 @@
-.menuIcon
-    cursor: pointer
 .menu
     width: 100vw
     height: 100vh
@@ -15,6 +13,14 @@
         z-index: 20
     ul
         position: absolute
-        top: 0
+        top: 10vh
+        left: 10vw
+        li
+            margin-top: 5vh
+            list-style-type: none
+            > *
+                letter-spacing: .8rem !important
+            &:hover *
+                color: white !important
     // &.active
     //     display: block
