@@ -28,35 +28,6 @@ $(window).on({
             y: e.clientY - outerCurserCenter[1],
             duration: 0.8,
         });
-        // }
-        // curser pointer
-        // if (hovering) {
-        //     if (hovering.ele.hasClass("curser_pointer_active")) {
-        //         // pointer curser
-        //         gsap.to(curser, {
-        //             x: e.clientX - curserCenter[0],
-        //             y: e.clientY - curserCenter[1],
-        //             scale: 0,
-        //             duration: 0.6,
-        //             ease: Power0,
-        //         });
-        //         gsap.to(outerCurser, {
-        //             x:
-        //                 hovering.left +
-        //                 hovering.width / 2 -
-        //                 outerCurserCenter[0],
-        //             y:
-        //                 hovering.top +
-        //                 hovering.height / 2 -
-        //                 outerCurserCenter[1],
-        //             duration: 0.6,
-        //             scale: 1.4,
-        //             ease: Power0,
-        //         });
-        //     }
-        //     // add the hover class
-        //     hovering.ele.addClass("curser_hovering");
-        // }
     },
 });
 // curser pointer

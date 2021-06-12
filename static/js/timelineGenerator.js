@@ -1,8 +1,8 @@
 // Dependencies
-import { inverse } from "./inverse.js";
+import { themeStyle } from "./themeStyle.js";
 // the class
 let i = 0;
-const timelineGenerate = ({ gallery }) => {
+const timelineGenerator = ({ gallery }) => {
     const tl = gsap.timeline({ paused: true }),
         heading = $(gallery).children(".heading"),
         col = $(gallery).children(".col");
@@ -16,7 +16,7 @@ const timelineGenerate = ({ gallery }) => {
         console.log("then resume");
         this.bobbleWizard.resume();
     });
-    tl.add(inverse(i));
+    tl.add(themeStyle(i));
     i++;
     // heading fade in
     tl.from(heading.find(".char"), {
@@ -55,4 +55,4 @@ const timelineGenerate = ({ gallery }) => {
     return tl;
 };
 // export
-export { timelineGenerate };
+export { timelineGenerator };

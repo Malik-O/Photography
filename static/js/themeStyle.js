@@ -4,7 +4,7 @@ const sizes = { x: $(window).innerWidth(), y: $(window).innerHeight() },
         { text: "#cc642d", background: "#261014" },
         { text: "#0e1d2e", background: "#985713" },
     ];
-const inverse = (i) => {
+const themeStyle = (i) => {
     let paths = $("#bobbles path[id^='bobble-']");
     const tl = gsap.timeline();
     paths = [...paths];
@@ -77,12 +77,6 @@ const inverse = (i) => {
         },
         i + 0.1
     );
-    // pause
-    // tl.addPause(`path-${i}`, function () {
-    //     console.log(bobbleWizard.pause());
-    // });
-    // }
-    // findShapeIndex("#bobbles path", "#rect");
     return tl;
 };
-export { inverse };
+export { themeStyle };
