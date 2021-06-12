@@ -1,7 +1,7 @@
 <template lang="pug">
     v-app(dark)
         //- inverse
-        .inverses
+        //- .inverses
         include ../static/svg/bobble.pug
         //- noise
         #noise

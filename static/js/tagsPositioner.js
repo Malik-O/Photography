@@ -1,24 +1,20 @@
 const tagsPositioner = (Slides) => {
     Slides.each(function (i) {
         if (i) {
-            const bobbleClone = $("svg#bobbles clipPath#bobbleModel")
-                    .clone(true)
-                    .attr("id", `bobble-${i}`),
-                inverseClone = `<div id='i${i}' class='inverse'/>`;
+            const bobbleClone = $("svg#bobbles path#bobbleModel")
+                .clone(true)
+                .attr("id", `bobble-${i}`);
             // appending the new ones
-            $("svg#bobbles defs").prepend(bobbleClone);
-            $(".inverses").append(inverseClone);
-            // assign the inverse to the bobble
-            $(`#i${i}`).css("clip-path", `url(#bobble-${i})`);
+            $("svg#bobbles").prepend(bobbleClone);
             // position the bobble
-            bobbleClone
-                .children("path")
-                .css(
-                    "transform",
-                    `translate(100.5vw, ${Math.round(
-                        (this.offsetTop / $("body").innerHeight()) * 100
-                    )}vh) scale(.3)`
-                );
+            // bobbleClone
+            //     .children("path")
+            //     .css(
+            //         "transform",
+            //         `translate(100.5vw, ${Math.round(
+            //             (this.offsetTop / $("body").innerHeight()) * 100
+            //         )}vh) scale(.3)`
+            //     );
         }
         // helpers
         // $(".tags").append(
@@ -28,6 +24,7 @@ const tagsPositioner = (Slides) => {
         //     )
         // );
     });
+    console.log($("svg#bobbles [id^='bobble-']"));
 };
 // export
 export { tagsPositioner };

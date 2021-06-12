@@ -1,8 +1,9 @@
 class Wizard {
-    constructor({ triggerElement, triggerHook, duration }) {
+    constructor({ triggerElement, triggerHook, duration, stopAtPauses }) {
         this.triggerElement = $(triggerElement);
         this.triggerHook = triggerHook == undefined ? 0.5 : triggerHook;
         this.duration = duration ? ++duration : 2;
+        this.active = true;
         //
         var lastScrollTop = 0;
         $(window).on("scroll", (e) => {
@@ -34,7 +35,7 @@ class Wizard {
             else upEle.removeClass("triggered");
             // }
             // activate the time line progress
-            if (this.triggered) {
+            if (this.triggered && this.active) {
                 this.tl.totalProgress(
                     1 -
                         ((Bounding.y + Bounding.height) / window.innerHeight -
@@ -71,6 +72,12 @@ class Wizard {
             height:
                 window.innerHeight * (this.duration - (this.triggerHook + 1)),
         });
+    }
+    pause() {
+        this.active = false;
+    }
+    resume() {
+        this.active = true;
     }
 }
 //

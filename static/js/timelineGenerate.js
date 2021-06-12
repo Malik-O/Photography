@@ -1,12 +1,23 @@
-const timelineGenerator = (g) => {
+// Dependencies
+import { inverse } from "./inverse.js";
+// the class
+let i = 0;
+const timelineGenerate = ({ gallery }) => {
     const tl = gsap.timeline({ paused: true }),
-        heading = g.children(".heading"),
-        col = g.children(".col");
+        heading = $(gallery).children(".heading"),
+        col = $(gallery).children(".col");
     // center the heading
     heading.css({
         top: `calc(50vh - ${heading.height() / 2}px)`,
         left: `calc(50vw - ${heading.width() / 2}px)`,
     });
+    //
+    tl.then(() => {
+        console.log("then resume");
+        this.bobbleWizard.resume();
+    });
+    tl.add(inverse(i));
+    i++;
     // heading fade in
     tl.from(heading.find(".char"), {
         y: -40,
@@ -44,4 +55,4 @@ const timelineGenerator = (g) => {
     return tl;
 };
 // export
-export { timelineGenerator };
+export { timelineGenerate };
