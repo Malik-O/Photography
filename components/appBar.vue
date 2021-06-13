@@ -2,15 +2,15 @@
     v-app-bar.pt-6(app flat color='transparent')
         v-container
             v-row(justify='space-between' aling='center')
-                .logo Logo
-                .menuIcon.curser-pointer.float-right
+                v-col(cols=2).logo.curser-pointer Logo
+                v-col.menu
+                    ul.float-right.pl-0.pr-6
+                        li(v-for='title in titles')
+                            splitter.curser-pointer(:text='title' :capitalize='true' style='color: white')
+                v-col(cols=1).menuIcon.curser-pointer
                     include ../static/svg/menu.pug
         //- 
-        .menu
-            .blur
-            ul
-                li(v-for='title in titles')
-                    splitter.heading.text-h3(:text='title' :capitalize='true' style='color: white')
+        .menuBlur
         script(src='./js/appBar.js' type='module')
 </template>
 

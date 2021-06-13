@@ -1,33 +1,28 @@
 // activate the menu
 $(".menuIcon").on("click", () => {
-    $(".menu").addClass("active");
-    const tl = gsap.timeline();
-    tl.set(".menu", { display: "block" });
-    tl.to(".menu .blur", {
-        opacity: 1,
-    });
+    $(".menuIcon, .menu").addClass("active");
+    // deactivate scrolling
     $("html").getNiceScroll().remove();
     $("html").css({ overflow: "hidden" });
-    //
-    const ul = $(".menu ul");
-    console.log(ul.height());
+    // menu fade in animation
+    const tl = gsap.timeline();
+    tl.set(".menuBlur", { "pointer-events": "auto" });
+    tl.to(".menuBlur", {
+        opacity: 1,
+    });
     tl.from(".menu ul li .char", {
         opacity: 0,
         y: 20,
-        stagger: 0.1,
+        stagger: 0.05,
         duration: 1,
     });
 });
+// deactivate the menu
 $(window).on("click", (e) => {
-    if ($(e.target).hasClass("blur")) {
-        const tl = gsap.timeline();
-        $(".menu").removeClass("active");
-        tl.to(".menu .blur", {
-            opacity: 0,
-        });
-        tl.set(".menu", { display: "none" });
+    if ($(e.target).hasClass("menuBlur")) {
+        $(".menuIcon, .menu").removeClass("active");
+        // reactivate the scrolling
         $("html").css({ overflow: "visible" });
-        //
         $("html").niceScroll({
             cursorcolor: "#FEC17F",
             cursorborder: "none",
@@ -35,6 +30,12 @@ $(window).on("click", (e) => {
             scrollspeed: 250,
             cursoropacitymin: 0.5,
             cursoropacitymax: 0.8,
+        });
+        //
+        const tl = gsap.timeline();
+        tl.set(".menuBlur", { "pointer-events": "none" });
+        tl.to(".menuBlur", {
+            opacity: 0,
         });
     }
 });
