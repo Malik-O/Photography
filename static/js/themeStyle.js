@@ -24,6 +24,18 @@ const themeStyle = (i) => {
     tl.to(
         paths[i],
         {
+            duration,
+            scale: 2,
+            "transform-origin": "10%",
+            // graph: 1,
+            // ease: Bounce.easeOut,
+            onStart: () => console.log(`path ${i} scaling completed`),
+        },
+        0
+    );
+    tl.to(
+        paths[i],
+        {
             morphSVG: "#bobbles g#stages #stage-1",
             duration: duration / stages,
             // graph: 1,
@@ -60,7 +72,7 @@ const themeStyle = (i) => {
     );
     // menu icon color
     tl.to(
-        ".menuIcon path",
+        ".menuIcon path, .logo circle",
         {
             stroke: colors[i].text,
             ease: "power1.in",
@@ -69,6 +81,7 @@ const themeStyle = (i) => {
         i + 0.1
     );
     // nicescroll curser color
+    console.log($(".nicescroll-cursors"));
     tl.to(
         ".nicescroll-cursors",
         {

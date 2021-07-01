@@ -12,10 +12,10 @@ const timelineGenerator = ({ gallery }) => {
         left: `calc(50vw - ${heading.width() / 2}px)`,
     });
     //
-    tl.then(() => {
-        console.log("then resume");
-        this.bobbleWizard.resume();
-    });
+    // tl.then(() => {
+    //     console.log("then resume");
+    //     this.bobbleWizard.resume();
+    // });
     tl.add(themeStyle(i));
     i++;
     // heading fade in

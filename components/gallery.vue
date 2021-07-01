@@ -1,7 +1,7 @@
 <template lang="pug">
     client-only
         v-row.Slide.gallery.product.ma-0
-            splitter.heading.text-h1(:text='heading || type' :capitalize='true' style=`color: ${color} !important`)
+            splitter.heading.text-h1(:text='heading' :capitalize='true' style=`color: ${color} !important`)
             v-col(v-for="c in cols * 1" :key="c" :cols="floor(12 / cols)")
                 v-row(v-for="n in ceil(imgsCount / cols)" :key="n")
                     mImg(
@@ -14,7 +14,11 @@
 import splitter from "@/components/splitter";
 import mImg from "@/components/mImg";
 export default {
-    props: ["type", "imgsCount", "cols", "heading", "color"],
+    props: ["attr"],
+    data() {
+        this.attr.heading = this.attr.heading || this.attr.type;
+        return this.attr;
+    },
     components: { splitter, mImg },
     methods: {
         genPecURL: function (n) {

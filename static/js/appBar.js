@@ -1,6 +1,6 @@
 // activate the menu
 $(".menuIcon").on("click", () => {
-    $(".menuIcon, .menu").addClass("active");
+    $(".menuIcon, .menu, .logo").addClass("active");
     // deactivate scrolling
     $("html").getNiceScroll().remove();
     $("html").css({ overflow: "hidden" });
@@ -12,19 +12,21 @@ $(".menuIcon").on("click", () => {
     });
     tl.from(".menu ul li .char", {
         opacity: 0,
-        y: 20,
-        stagger: 0.05,
+        x: 20,
+        stagger: {
+            amount: 1,
+        },
         duration: 1,
     });
 });
 // deactivate the menu
 $(window).on("click", (e) => {
     if ($(e.target).hasClass("menuBlur")) {
-        $(".menuIcon, .menu").removeClass("active");
+        $(".menuIcon, .menu, .logo").removeClass("active");
         // reactivate the scrolling
         $("html").css({ overflow: "visible" });
         $("html").niceScroll({
-            cursorcolor: "#FEC17F",
+            cursorcolor: $("*").css("color"),
             cursorborder: "none",
             cursorborderradius: "1px",
             scrollspeed: 250,

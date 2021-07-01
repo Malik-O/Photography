@@ -3,10 +3,8 @@
         v-container(fluid).pa-0
             appBar
             .Slide 
-                splitter.heading.text-h1(text='satisfing websit' :capitalize='true' style=`color: ${color} !important`)
-            gallery(type='art' heading='art photography' color='#325f91' imgsCount=9 cols=3)
-            gallery(type='architectural' imgsCount=9 cols=3)
-            gallery(type='product' imgsCount=9 cols=3)
+                splitter.heading.text-h1(text='satisfing websit' capitalize='true')
+            gallery(v-for='attr in attrs' :key='attr.type' :attr='attr')
             .tags
             script(src='./js/curser.js' type='module')
 </template>
@@ -17,8 +15,29 @@ import gallery from "@/components/gallery";
 import splitter from "@/components/splitter";
 export default {
     data: () => ({
-        products: 9,
-        cols: 3,
+        attrs: [
+            {
+                type: "art",
+                imgsCount: 9,
+                cols: 3,
+                text: "#95546e",
+                background: "#0e1d30",
+            },
+            {
+                type: "architectural",
+                imgsCount: 9,
+                cols: 3,
+                text: "#cc642d",
+                background: "#261014",
+            },
+            {
+                type: "product",
+                imgsCount: 9,
+                cols: 3,
+                text: "#0e1d2e",
+                background: "#985713",
+            },
+        ],
     }),
     components: { appBar, gallery, splitter },
 };

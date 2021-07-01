@@ -1,5 +1,5 @@
 class Wizard {
-    constructor({ triggerElement, triggerHook, duration, stopAtPauses }) {
+    constructor({ triggerElement, triggerHook, duration }) {
         this.triggerElement = $(triggerElement);
         this.triggerHook = triggerHook == undefined ? 0.5 : triggerHook;
         this.duration = duration ? ++duration : 2;
@@ -72,12 +72,6 @@ class Wizard {
             height:
                 window.innerHeight * (this.duration - (this.triggerHook + 1)),
         });
-    }
-    pause() {
-        this.active = false;
-    }
-    resume() {
-        this.active = true;
     }
 }
 //
