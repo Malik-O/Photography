@@ -2,14 +2,14 @@
     client-only(placeholder="Loading...")
         v-container(fluid).pa-0
             appBar
-            .Slide 
-                splitter.heading.text-h1(text='satisfing websit' capitalize='true')
+            Heading
             gallery(v-for='attr in attrs' :key='attr.type' :attr='attr')
             .tags
             script(src='./js/curser.js' type='module')
 </template>
 
 <script>
+import Heading from "@/components/Heading";
 import appBar from "@/components/appBar";
 import gallery from "@/components/gallery";
 import splitter from "@/components/splitter";
@@ -39,7 +39,7 @@ export default {
             },
         ],
     }),
-    components: { appBar, gallery, splitter },
+    components: { Heading, appBar, gallery, splitter },
 };
 </script>
 <style lang="sass"></style>

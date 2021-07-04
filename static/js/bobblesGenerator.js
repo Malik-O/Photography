@@ -1,6 +1,6 @@
-const bobblesPosition = (Slides) => {
+const bobblesGenerator = (Slides) => {
     $(Slides).each(function (i) {
-        if (i == 1) {
+        if (i) {
             const bobbleClone = $("svg#bobbles path#bobbleModel")
                 .clone(true)
                 .attr("id", `bobble-${i}`);
@@ -10,4 +10,4 @@ const bobblesPosition = (Slides) => {
     });
 };
 // export
-export { bobblesPosition };
+export { bobblesGenerator };

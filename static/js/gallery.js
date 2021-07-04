@@ -1,9 +1,9 @@
 // Dependencies
 import { timelineGenerator } from "./timelineGenerator.js";
 import { Wizard } from "./wizard.js";
-import { bobblesPosition } from "./bobblesPosition.js";
+import { bobblesGenerator } from "./bobblesGenerator.js";
 // position the tags
-bobblesPosition(".Slide");
+bobblesGenerator(".Slide");
 // gallery animation
 $(".gallery").each(function () {
     const tl = timelineGenerator({ gallery: this });

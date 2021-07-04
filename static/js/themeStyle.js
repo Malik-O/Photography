@@ -1,10 +1,23 @@
+// Dependencies
+import { changeColor } from "./changeColor.js";
+// vars
 const sizes = { x: $(window).innerWidth(), y: $(window).innerHeight() },
     colors = [
-        { text: "#95546e", background: "#0e1d30" },
+        { type: "default", text: "#272C2D", background: "#e9e9e9" },
         { text: "#cc642d", background: "#261014" },
+        { text: "#95546e", background: "#0e1d30" },
         { text: "#0e1d2e", background: "#985713" },
     ];
+let duration = 0.8,
+    stages = $("#bobbles g#stages").children().length;
+console.log(stages);
+// set default theme color
+changeColor({ color: colors[0].text });
+// remove default from colors
+colors.shift();
+// themeStyle
 const themeStyle = (i) => {
+    console.log("theme" + i);
     let paths = $("#bobbles path[id^='bobble-']");
     const tl = gsap.timeline();
     paths = [...paths];
@@ -19,19 +32,18 @@ const themeStyle = (i) => {
     gsap.set(paths[i], { fill: colors[i].background });
     // bobble scale up
     // stage 1
-    let duration = 1,
-        stages = 3;
     tl.to(
         paths[i],
         {
             duration,
-            scale: 2,
+            scale: 1.5,
             "transform-origin": "10%",
+            // delay: duration / 2,
             // graph: 1,
             // ease: Bounce.easeOut,
             onStart: () => console.log(`path ${i} scaling completed`),
-        },
-        0
+        }
+        // duration - 0.2
     );
     tl.to(
         paths[i],
@@ -54,42 +66,29 @@ const themeStyle = (i) => {
     });
     // stage 3
     tl.to(paths[i], {
-        morphSVG: "#bobbles g#stages #stage-3",
+        morphSVG: { shape: "#bobbles g#stages #stage-3", shapeIndex: 1 },
         duration: duration / stages,
         // graph: 1,
         // ease: Bounce.easeOut,
         onStart: () => console.log(`path ${i} stage 3 completed`),
     });
-    // text color
-    tl.to(
-        "*",
-        {
-            color: colors[i].text,
-            ease: "power1.in",
-            duration,
-        },
-        i + 0.1
-    );
-    // menu icon color
-    tl.to(
-        ".menuIcon path, .logo circle",
-        {
-            stroke: colors[i].text,
-            ease: "power1.in",
-            duration,
-        },
-        i + 0.1
-    );
-    // nicescroll curser color
-    console.log($(".nicescroll-cursors"));
-    tl.to(
-        ".nicescroll-cursors",
-        {
-            background: colors[i].text,
-            duration,
-        },
-        i + 0.1
-    );
+    // change color
+    changeColor({
+        color: colors[i].text,
+        i,
+        scope: tl,
+        method: "to",
+        duration,
+    });
+    // next path to stage 0
+    // if (paths[i + 1])
+    //     tl.to(paths[i + 1], {
+    //         morphSVG: "#bobbles g#stages #stage-0",
+    //         duration: duration / stages,
+    //         // graph: 1,
+    //         ease: Bounce.easeOut,
+    //         onStart: () => console.log(`path ${i} stage 0 completed`),
+    //     });
     return tl;
 };
 export { themeStyle };
