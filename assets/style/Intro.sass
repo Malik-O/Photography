@@ -1,0 +1,37 @@
+// vars
+$height: 500
+// style
+.Intro
+    z-index: 5
+    position: relative
+    .text
+        position: absolute
+        top: 12em
+        // .splitter, svg
+        //     display: inline
+        svg
+            filter: brightness(2)
+            &:hover
+                transform: scale(.95)
+                transition: transform .2s ease-out
+            #textClip text
+                font-size: 111px
+                font-family: $primary_font_family
+                display: none
+                &:first-of-type
+                    display: inline
+            #background path
+                animation:
+                    name: pulse
+                    duration: 4s
+                    // direction: alternate
+                    iteration-count: infinite
+                    timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)
+                // animation:  4s alternate cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+                transform-origin: 50% 50%
+                transform-box: fill-box
+@keyframes pulse
+    0%, 100%
+        transform: scale(0) rotate(33deg)
+    35%, 65%
+        transform: scale(1) rotate(0deg)

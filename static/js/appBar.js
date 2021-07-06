@@ -1,3 +1,5 @@
+// Dependencies
+import { blobEventSwitcher } from "./blobAnimator.js";
 // activate the menu
 $(".menuIcon").on("click", () => {
     $(".menuIcon, .menu, .logo").addClass("active");
@@ -18,6 +20,8 @@ $(".menuIcon").on("click", () => {
         },
         duration: 1,
     });
+    // pause blob animation
+    blobEventSwitcher("remove");
 });
 // deactivate the menu
 $(window).on("click", (e) => {
@@ -39,5 +43,7 @@ $(window).on("click", (e) => {
         tl.to(".menuBlur", {
             opacity: 0,
         });
+        // pause blob animation
+        blobEventSwitcher();
     }
 });
