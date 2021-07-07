@@ -37,6 +37,7 @@ $D: 40px
 $color: white
 $mini: 0.15
 $crossWidth: 3px
+$zCurser: 25
 #outerCurser
     width: $D
     height: $D
@@ -47,7 +48,7 @@ $crossWidth: 3px
     pointer-events: none
     opacity: 1
     mix-blend-mode: difference
-    z-index: 15
+    z-index: $zCurser
     position: fixed
     &.cross
         background: transparent
@@ -72,7 +73,7 @@ $crossWidth: 3px
     border-radius: 50%
     mix-blend-mode: difference
     pointer-events: none
-    z-index: 15
+    z-index: $zCurser
     position: fixed
 // application
 .v-application
@@ -80,7 +81,7 @@ $crossWidth: 3px
     position: relative
 // 
 [id^='ascrail']
-    padding-right: 5px
+    padding: 5px 5px 0 0
     z-index: 100 !important
 .Slide
     height: 100vh

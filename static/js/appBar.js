@@ -1,11 +1,13 @@
 // Dependencies
+import { timelineGenerator } from "./timelineGenerator.js";
 import { blobEventSwitcher } from "./blobAnimator.js";
+import { niceScrollGenerator } from "./niceScrollGenerator.js";
+import { Wizard } from "./wizard.js";
 // activate the menu
 $(".menuIcon").on("click", () => {
     $(".menuIcon, .menu, .logo").addClass("active");
     // deactivate scrolling
-    $("html").getNiceScroll().remove();
-    $("html").css({ overflow: "hidden" });
+    niceScrollGenerator.remove();
     // menu fade in animation
     const tl = gsap.timeline();
     tl.set(".menuBlur", { "pointer-events": "auto" });
@@ -28,19 +30,20 @@ $(window).on("click", (e) => {
     if ($(e.target).hasClass("menuBlur")) {
         $(".menuIcon, .menu, .logo").removeClass("active");
         // reactivate the scrolling
-        $("html").css({ overflow: "visible" });
-        $("html").niceScroll({
-            cursorcolor: $("*").css("color"),
-            cursorborder: "none",
-            cursorborderradius: "1px",
-            scrollspeed: 250,
-            cursoropacitymin: 0.5,
-            cursoropacitymax: 0.8,
+        niceScrollGenerator.add();
+        // regenerate the timeline
+        const wizards = Wizard.getAll();
+        let i = 0;
+        $(".gallery").each(function () {
+            const tl = new timelineGenerator({ gallery: this });
+            wizards[i++].setTween(tl);
         });
-        //
-        const tl = gsap.timeline();
-        tl.set(".menuBlur", { "pointer-events": "none" });
-        tl.to(".menuBlur", {
+        timelineGenerator.end();
+        // trigger scroll event
+        $(window).trigger("scroll");
+        // fade in the blur layer
+        gsap.set(".menuBlur", { "pointer-events": "none" });
+        gsap.to(".menuBlur", {
             opacity: 0,
         });
         // pause blob animation

@@ -1,13 +1,14 @@
+// vars
+let allWizards = [];
+// Class
 class Wizard {
     constructor({ triggerElement, triggerHook, duration }) {
         this.triggerElement = $(triggerElement);
         this.triggerHook = triggerHook == undefined ? 0.5 : triggerHook;
         this.duration = duration ? ++duration : 2;
         this.active = true;
-        //
-        var lastScrollTop = 0;
-        $(window).on("scroll", (e) => {
-            // let direction = lastScrollTop > scrollY; // up: 1, down: 0
+        // on scroll event
+        $(window).on("scroll", () => {
             // triggered status
             const boundingElement = $(
                 this.pinEle ? this.pinEle : this.triggerElement
@@ -33,7 +34,6 @@ class Wizard {
             // manage triggered class
             if (this.triggered) upEle.addClass("triggered");
             else upEle.removeClass("triggered");
-            // }
             // activate the time line progress
             if (this.triggered && this.active) {
                 this.tl.totalProgress(
@@ -55,8 +55,6 @@ class Wizard {
                         top: "",
                     });
             }
-            // update the flag
-            lastScrollTop = scrollY;
         });
     }
     setTween(tl) {
@@ -72,6 +70,12 @@ class Wizard {
             height:
                 window.innerHeight * (this.duration - (this.triggerHook + 1)),
         });
+    }
+    save() {
+        allWizards.push(this);
+    }
+    static getAll() {
+        return allWizards;
     }
 }
 //

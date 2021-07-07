@@ -31,7 +31,6 @@ const colorBlobs = () => {
 colorBlobs();
 // each iteration
 const iteration = () => {
-    console.log("ittration");
     // Change the color of all the blobs
     colorBlobs();
     // Hide the old set of lines
@@ -40,12 +39,10 @@ const iteration = () => {
         startVal = texts.length - numLines;
     }
     for (let i = startVal; i < startVal + numLines; i++) {
-        console.log("none", texts, i);
         texts[i].style.display = "none";
     }
     // Show new set of lines
     for (let j = currCount; j < currCount + numLines; j++) {
-        console.log("inline", texts, j);
         texts[j].style.display = "inline";
     }
     currCount += numLines;
