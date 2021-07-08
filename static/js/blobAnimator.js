@@ -1,25 +1,8 @@
-// Dependencies
-import { Wizard } from "./wizard.js";
-//
-// $(".Heading").each(function () {
-//     const tl = gsap.timeline({ paused: true }),
-//         galleryWizard = new Wizard({
-//             triggerElement: this,
-//             triggerHook: 0,
-//             duration: 5,
-//         });
-//     tl.from($(".Heading .splitter"), {
-//         y: -30,
-//         stagger: 0.1,
-//     });
-//     galleryWizard.setTween(tl);
-//     galleryWizard.setPin(this);
-// });
 // vars
 const colors = ["#261014", "#0e1d30", "#985713"];
 const numLines = 1;
 let currCount = numLines;
-const svg = document.querySelector("svg.blobText"),
+const svg = $("svg.blobText"),
     texts = document.querySelectorAll("#textClip text"),
     blobs = document.querySelectorAll("#background path");
 // random color for each blob
@@ -44,6 +27,11 @@ const iteration = () => {
     // Show new set of lines
     for (let j = currCount; j < currCount + numLines; j++) {
         texts[j].style.display = "inline";
+        // chang the svg data content
+        const content = texts[j].textContent
+            .replace(/\W+/g, "")
+            .toLocaleLowerCase();
+        svg.attr("data-content", content);
     }
     currCount += numLines;
     if (currCount >= texts.length) {

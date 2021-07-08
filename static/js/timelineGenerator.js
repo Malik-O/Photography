@@ -32,6 +32,8 @@ class timelineGenerator {
                 duration: 1,
             }
         );
+        tl.addLabel($(gallery).attr("data-content"));
+        console.log($(gallery).attr("class"));
         // animate the photos columns
         let columnsDuration = 3;
         col.each(function (i) {

@@ -3,7 +3,6 @@
         span.word(v-for="word in text.split(' ').map((text, index) => text)")
             span(v-if="text.split(' ').indexOf(word)") &nbsp;
             span.char(v-for="(char, i) in word") {{!i && capitalize ? char.toUpperCase() : char}}
-        script(src='./js/headingAnimator.js')
 </template>
 
 <script>
