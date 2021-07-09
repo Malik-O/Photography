@@ -7,7 +7,7 @@ const colors = [
     { text: "#95546e", background: "#0e1d30" },
     { text: "#0e1d2e", background: "#985713" },
 ];
-let duration = 0.8,
+let duration = 1.5,
     stages = $("#bobbles g#stages").children().length;
 // set default theme color then remove it
 changeColor({ toColor: colors[0].text });

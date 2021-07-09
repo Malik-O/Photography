@@ -1,7 +1,9 @@
 <template lang="pug">
     client-only
         v-row.Slide.gallery.ma-0
-            splitter.heading.text-h1(:text='heading' :capitalize='true' style=`color: ${color} !important`)
+            .heading
+                splitter.text-h1.d-inline(:text='heading' :capitalize='true')
+                splitter.text-h3.d-inline.pl-6(text=' photography' :capitalize='true')
             v-col(v-for="c in cols * 1" :key="c" :cols="floor(12 / cols)")
                 v-row(v-for="n in ceil(imgsCount / cols)" :key="n")
                     mImg(

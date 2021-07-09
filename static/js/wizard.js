@@ -17,8 +17,7 @@ class Wizard {
                 start = Bounding.y / window.innerHeight - this.triggerHook,
                 end =
                     (Bounding.y + Bounding.height) / window.innerHeight -
-                    this.triggerHook -
-                    1;
+                    this.triggerHook;
             // if (this.pinEle) {
             const upEle = this.pinEle || this.triggerElement;
             this.triggered = (start < 0) ^ (end < 0);
@@ -39,9 +38,8 @@ class Wizard {
                 this.tl.totalProgress(
                     1 -
                         ((Bounding.y + Bounding.height) / window.innerHeight -
-                            this.triggerHook -
-                            1) /
-                            (Bounding.height / window.innerHeight - 1)
+                            this.triggerHook) /
+                            (Bounding.height / window.innerHeight)
                 );
             }
             // pined element position when triggered
@@ -67,8 +65,7 @@ class Wizard {
         $(pinEle).wrap("<div class='pin-spacer'></div>");
         this.pinEle = $(pinEle).parent();
         this.pinEle.css({
-            height:
-                window.innerHeight * (this.duration - (this.triggerHook + 1)),
+            height: window.innerHeight * (this.duration - this.triggerHook),
         });
     }
     save() {

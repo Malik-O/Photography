@@ -1,7 +1,7 @@
 <template lang="pug">
     .ContactMe.Slide
-        splitter(text='Contact Me')
         v-container.top
+            splitter(text='Contact Me')
             v-form(v-model="valid" lazy-validation)
                 v-row(justify='start').checkbox
                     v-col(cols='2')
@@ -21,8 +21,9 @@
                     v-col #[v-text-field(v-model="email" clearable :rules="emailRules" label="Your e-mail").curser_hover_active]
                 v-row 
                     v-col.pl-0 #[v-textarea(label="Project details" auto-grow rows="3" row-height="15").curser_hover_active]
-                //- v-row 
-                //-     v-col #[v-file-input(truncate-length="10" label="" counter multiple show-size small-chips)]
+                v-row 
+                    v-col #[v-file-input(truncate-length="10" label="" counter multiple show-size small-chips)]
+        //- script(src='./js/contactTimeline.js' type='module')
 </template>
 
 <script>

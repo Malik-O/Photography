@@ -4,6 +4,7 @@ export default {
 
     head: {
         title: "photography",
+        link: [{ rel: "icon", type: "image/x-icon", href: "svg/logo.svg" }],
         htmlAttrs: {
             lang: "en",
         },
