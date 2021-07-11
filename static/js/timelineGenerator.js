@@ -1,5 +1,7 @@
 // Dependencies
 import { themeStyle } from "./themeStyle.js";
+import { changeColor } from "./changeColor.js";
+import { colors } from "./colorsObj.js";
 // the class
 let i = 0;
 class timelineGenerator {
@@ -12,7 +14,10 @@ class timelineGenerator {
             top: `calc(50vh - ${heading.height() / 2}px)`,
             left: `calc(50vw - ${heading.width() / 2}px)`,
         });
+        // add theme color changer
         tl.add(themeStyle(i++));
+        // set default theme color then remove it
+        changeColor({ toColor: colors[0].text });
         // heading fade in
         tl.fromTo(
             heading.find(".char"),
@@ -52,11 +57,15 @@ class timelineGenerator {
             );
         });
         // heading fade in
-        tl.to(heading, {
-            scale: 0.9,
-            opacity: 0,
-            duration: 0.2,
-        });
+        tl.fromTo(
+            heading,
+            { scale: 1, opacity: 1 },
+            {
+                scale: 0.9,
+                opacity: 0,
+                duration: 0.6,
+            }
+        );
         // return
         return tl;
     }

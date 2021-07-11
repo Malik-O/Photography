@@ -1,5 +1,7 @@
+// Dependencies
+import { colors as mixColors } from "./colorsObj.js";
 // vars
-const colors = ["#261014", "#0e1d30", "#985713", "#272c2d"];
+const colors = mixColors.map((x) => (x.type ? x.text : x.background));
 const numLines = 1;
 let currCount = numLines;
 const svg = $("svg.blobText"),

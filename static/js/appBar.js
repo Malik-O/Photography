@@ -14,14 +14,19 @@ $(".menuIcon").on("click", () => {
     tl.to(".menuBlur", {
         opacity: 1,
     });
-    tl.from(".menu ul li .char", {
-        opacity: 0,
-        x: 20,
-        stagger: {
-            amount: 1,
+    tl.fromTo(
+        ".menu ul li .char",
+        {
+            opacity: 0,
+            x: 20,
         },
-        duration: 1,
-    });
+        {
+            opacity: 1,
+            x: 0,
+            stagger: { amount: 1 },
+            duration: 1,
+        }
+    );
     // pause blob animation
     blobEventSwitcher("remove");
 });
