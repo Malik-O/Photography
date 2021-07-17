@@ -4,7 +4,7 @@
             appBar
             Intro(:types='types')
             gallery(v-for='attr in attrs' :key='attr.type' :class='attr.type' :attr='attr')
-            ContactMe
+            //- ContactMe
             .tags
             script(src='./js/curser.js' type='module')
             script(src='./js/headingAnimator.js')

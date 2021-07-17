@@ -19,7 +19,7 @@
 import splitter from "@/components/splitter";
 export default {
     data: () => ({
-        titles: ["home", "art", "architectural", "product", "contact us"],
+        titles: ["home", "art", "architectural", "product", "contact me"],
     }),
     components: { splitter },
 };
