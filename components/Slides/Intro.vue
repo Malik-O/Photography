@@ -2,7 +2,7 @@
     .Intro.Slide
         .text
             splitter.heading.text-h4.d-block(text='hi' capitalize='true')
-            splitter.heading.text-h1.d-inline(text="I'm mikle" capitalize='true')
+            splitter.heading.text-h1.d-inline(text="I'm Malik" capitalize='true')
             splitter.heading.text-h4.d-block(text="and I'm " capitalize='true')
             splitter.heading.text-h1.d-inline(text='Photographer of ')
             svg(width=750 height=97 :data-content='types[0]').blobText.d-inline.curser-pointer.pl-6

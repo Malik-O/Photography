@@ -2,7 +2,7 @@
     client-only(placeholder="Loading...")
         v-container(fluid).pa-0
             appBar
-            Intro(:types='types')
+            Intro(:types='types').px-15
             gallery(v-for='attr in attrs' :key='attr.type' :class='attr.type' :attr='attr')
             //- ContactMe
             .tags
